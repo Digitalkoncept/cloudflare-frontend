@@ -7,7 +7,7 @@ const Posts = () => {
   useEffect(() => {
     const getPosts = async () => {
       const resp = await fetch(
-        "https://serverless-api.signalnerve.workers.dev/api/posts"
+        "https://serverless-api.arun-singh.workers.dev/api/posts"
       );
       const postsResp = await resp.json();
       setPosts(postsResp);
@@ -24,6 +24,7 @@ const Posts = () => {
           <h2>
             <Link to={`/posts/${post.id}`}>{post.title}</Link>
           </h2>
+          <p>{post.text}</p>
         </div>
       ))}
     </div>
